@@ -1,0 +1,24 @@
+@import "src/shared/css/colors"
+
+.Table
+  width: 100%
+  border-collapse: collapse
+
+  thead
+    th
+      padding: 10px 5px
+      text-align: left
+
+  tbody
+    tr
+      &:hover
+        background-color: $mid-grey
+
+  tr
+    transition: all 1s ease-out
+
+    &:not(:last-child)
+      border-bottom: 1px solid $light-grey
+
+    td
+      padding: 10px 5px
