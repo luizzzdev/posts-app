@@ -7,7 +7,7 @@ import Card from '../shared/components/UI/Card/card';
 import Layout from '../shared/components/UI/Layout/layout';
 import Pagination from '../shared/components/UI/Pagination/Pagination';
 
-const Posts = () => {
+const Posts = props => {
   const onSubmitHandler = post => {
     PostService.save(post);
   };

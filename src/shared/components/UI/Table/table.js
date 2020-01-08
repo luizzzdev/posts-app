@@ -2,12 +2,16 @@ import React from 'react';
 import classes from './table.module.sass';
 
 const Table = ({ data, columns } = { data: [], columns: [] }) => {
-  const headerColumns = columns.map(column => <th>{column.label}</th>);
-  const bodyData = data.map(val => {
+  const headerColumns = columns.map(column => (
+    <th key={column.label}>{column.label}</th>
+  ));
+  const bodyData = data.map((val, index) => {
     return (
-      <tr>
+      <tr key={index}>
         {columns.map(column => (
-          <td>{val[column.prop] || ''}</td>
+          <td key={`${column.prop}${val[column.prop]}`}>
+            {val[column.prop] || ''}
+          </td>
         ))}
       </tr>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import Aux from '../../../shared/components/UI/Aux/Aux';
 import Card from '../../../shared/components/UI/Card/card';
 import { Formik } from 'formik';
 import authClasses from '../../Auth.module.sass';
@@ -7,9 +6,9 @@ import Input from '../../../shared/components/UI/Input/input';
 import Button from '../../../shared/components/UI/Button/button';
 import Text from '../../../shared/components/UI/Text/Text';
 import FormikValidatorService from '../../../shared/services/formikValidator';
-import AuthService from "../../authService";
+import AuthService from '../../authService';
 
-const Login = () => {
+const Login = props => {
   const fieldsSchema = {
     email: {
       type: 'email',
@@ -21,7 +20,12 @@ const Login = () => {
   };
 
   const submitHandler = async ({ email, password }) => {
-    const success = await AuthService.signIn(email, password);
+    try {
+      const user = await AuthService.signIn(email, password);
+      props.history.push('/posts');
+    } catch (e) {
+      console.error(e.message);
+    }
   };
 
   return (

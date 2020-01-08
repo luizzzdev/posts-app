@@ -12,7 +12,10 @@ const AuthService = {
       })
     ).data;
 
-    return responseData.length > 0;
+    if (responseData.length === 0)
+      throw new Error('Email ou senha incorretos ):');
+
+    return responseData[0];
   },
 
   signUp(nickname, email, password) {
