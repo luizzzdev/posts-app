@@ -5,9 +5,9 @@ const Table = ({ data, columns } = { data: [], columns: [] }) => {
   const headerColumns = columns.map(column => <th>{column.label}</th>);
   const bodyData = data.map(val => {
     return (
-      <tr>
+      <tr key={val}>
         {columns.map(column => (
-          <td>{val[column.prop] || ''}</td>
+          <td key={`${column}${val[column.prop] || ''}`}>{val[column.prop] || ''}</td>
         ))}
       </tr>
     );

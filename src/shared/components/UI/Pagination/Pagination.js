@@ -27,7 +27,13 @@ const Pagination = ({ page, pageHandler }) => {
     <div className={classes.Pagination}>
       <div className={classes.Items}>
         {pages.map(page => (
-          <p className={getPageClasses(page)} onClick={() => pageHandler(page)}>{page}</p>
+          <p
+            key={page}
+            className={getPageClasses(page)}
+            onClick={() => pageHandler(page)}
+          >
+            {page}
+          </p>
         ))}
       </div>
     </div>

@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sobre o projeto
+
+O projeto foi criado utilizando create-react-app, então as instruções abaixo atendem com sucesso caso você queira rodar em sua máquina
+
+### Sobre a estrutura
+Optei por separar as pastas por funcionalidade, então temos as 3 pastas iniciais do projeto:
+1.  Auth: responsável pela funcionalidade de autenticação, tanto registro quanto login
+2. Posts: responsável pelas funcionalidades relativas à post, cadastro visualização, exclusão, etc
+3. Shared: componentes que são utilizados para criar as funcionalidades, neles estão componentes de exibição, funções auxiliares, variáveis de CSS, serviços, etc
 
 ## Available Scripts
 
